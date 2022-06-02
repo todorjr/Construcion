@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap");
+$primary: #313131;
+$secondary: #fde21c;
+$tertiary: #506df5;
+$darkblue: #012f5b;
+$lightgray: #d3d3d3;
+$text: #585858;
+$white: #fff;
+$black: #000000;
+$orange: #fd830f;
+$bg: #f7f7f7;
+$fontSize: 16px;
+$fontFamily: "Montserrat", sans-serif;
+
+$transition: all 0.3s ease;
+
+$padding: 64px 0;
+
+/*****************
+basic styles
+*****************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: $fontSize;
+  font-family: $fontFamily;
+  color: $black;
+  background: $bg;
+}
+.container {
+  max-width: 80%;
+  margin: auto;
+}
+
+.header {
+  margin: 10px;
+  border: 1px solid;
+  h1 {
+    color: red;
+    padding: 10px;
+  }
+}
+/*****************
+mixins
+*****************/
+@mixin button {
+  border: 1px solid $white;
+  padding: 10px 20px;
+  color: $white;
+  background-color: $primary;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $white;
+    color: $primary;
+    cursor: pointer;
+  }
+}
+
+/*****************
+nav
+*****************/
+
+nav {
+  background-color: $primary;
+  padding: 10px 50px;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 33, 33%;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      font-size: 20px;
+      &:hover {
+        color: $secondary;
+      }
+    }
+    img {
+      width: 10%;
+      margin-right: 25px;
+    }
+  }
+  .work-days {
+    flex: 0 0 33.33%;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .nav-button {
+    flex: 0 0 33.33%;
+    text-align: right;
+    button {
+      @include button;
+    }
+  }
+}
+.hero {
+  background: url(img/header.jpg);
+  background-size: cover;
+  background-position: center;
+  .container {
+    height: 70vh;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 40px;
+      color: $primary;
+    }
+    p {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .hero-btns {
+      button:first-child {
+        border: 1px solid $tertiary;
+        padding: 10px 20px;
+        color: $white;
+        background-color: $tertiary;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: transparent;
+          color: $white;
+          cursor: pointer;
+        }
+      }
+      button:last-child {
+        border: 1px solid $tertiary;
+        padding: 10px 20px;
+        color: $white;
+        background-color: $tertiary;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: transparent;
+          color: $white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.cards {
+  height: 60vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    border: 1px solid;
+    cursor: pointer;
+    height: 40vh;
+    width: 40vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &:last-child:hover {
+      height: 45vh;
+      width: 45vh;
+      background-color: $white;
+    }
+    h4 {
+      font-family: "Abel", sans-serif;
+      font-size: 30px;
+      padding: 0 5px;
+      text-align: center;
+      font-weight: lighter;
+    }
+    p {
+      text-align: center;
+      padding: 10px;
+      font-weight: lighter;
+      span {
+        font-family: "Barlow", sans-serif;
+        font-size: 50px;
+        color: $darkblue;
+      }
+    }
+    button {
+      font-size: 20px;
+      margin: 15px;
+      border: 1px solid $tertiary;
+      padding: 15px;
+      color: $tertiary;
+      background-color: transparent;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+.hero2 {
+  background: url(img/bg2.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    margin: 20px;
+    padding: 30px;
+    color: $white;
+    font-size: 50px;
+    border-bottom: 4px solid $secondary;
+    border-width: 10px;
+  }
+  .images {
+    display: flex;
+    flex-direction: row;
+
+    .cart {
+      border: 1px solid $white;
+      border-radius: 10px;
+      width: 40vh;
+      height: 65vh;
+      background-color: $white;
+      margin: 0 20px;
+      img {
+        width: 100%;
+        height: 50%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: lighter;
+      text-align: left;
+      margin: 20px;
+    }
+    h5 {
+      padding-top: 5px;
+      font-family: "Barlow", sans-serif;
+      font-weight: bold;
+      font-size: 30px;
+      margin-left: 20px;
+    }
+    button {
+      font-size: 20px;
+      margin: 20px;
+      border: 2px solid $tertiary;
+      padding: 10px;
+      color: $tertiary;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+}
